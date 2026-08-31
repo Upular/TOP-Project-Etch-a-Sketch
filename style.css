@@ -3,13 +3,14 @@
   flex-wrap: wrap;
   width: 320px;
   height: 320px;
-  border: 2px solid black;
+  border: 2px solid lightgray;
 }
 
 .square {
   width: 20px;
   height: 20px;
-  background-color: lightgray;
+  background-color: rgb(18, 138, 168);
   box-sizing: border-box;
-  border: 1px solid white;
+  border: 1px solid beige;
 }
+ 
