@@ -13,4 +13,7 @@
   box-sizing: border-box;
   border: 1px solid beige;
 }
- 
+
+.square.active {
+  background-color: salmon; 
+}

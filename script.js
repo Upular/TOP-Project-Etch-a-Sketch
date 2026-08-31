@@ -5,7 +5,13 @@ for (let i = 0; i < 256; i++) {
 
   newSquare.classList.add("square");
 
+  newSquare.addEventListener("mouseover", () => {
+    newSquare.classList.add("active");
+  });
+
   if (container !== null) {
     container.appendChild(newSquare);
   }
 };
+
+
