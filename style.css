@@ -17,3 +17,8 @@
 .square.active {
   background-color: salmon; 
 }
+
+button {
+  background-color: gray;
+  color: beige;
+}

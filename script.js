@@ -12,6 +12,12 @@ for (let i = 0; i < 256; i++) {
   if (container !== null) {
     container.appendChild(newSquare);
   }
-};
+}
 
+const resetBtn = document.getElementById("reset-btn");
 
+if (resetBtn !== null) {
+  resetBtn.addEventListener("click", () => {
+    location.reload();
+  });
+}
