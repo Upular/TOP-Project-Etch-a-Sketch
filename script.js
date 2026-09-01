@@ -21,3 +21,11 @@ if (resetBtn !== null) {
     location.reload();
   });
 }
+
+const promptBtn = document.getElementById("prompt-btn");
+
+if (promptBtn !== null) {
+  promptBtn.addEventListener("click", () => {
+    prompt("choose a number up to 100");
+  });
+}
