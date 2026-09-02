@@ -26,6 +26,16 @@ const promptBtn = document.getElementById("prompt-btn");
 
 if (promptBtn !== null) {
   promptBtn.addEventListener("click", () => {
-    prompt("choose a number up to 100");
+    getPrompt();
   });
+};
+
+function getPrompt() {
+  let promptResult = prompt("choose a number up to 100");
+  let parsedResult = parseInt(promptResult);
+  if (parsedResult <= 100) {
+    return parsedResult;
+  } else {
+    return "The number you selected is invalid";
+  }
 };
