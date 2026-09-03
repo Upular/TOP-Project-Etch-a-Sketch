@@ -15,7 +15,6 @@ for (let i = 0; i < 256; i++) {
 };
 
 const resetBtn = document.getElementById("reset-btn");
-
 if (resetBtn !== null) {
   resetBtn.addEventListener("click", () => {
     location.reload();
@@ -23,7 +22,6 @@ if (resetBtn !== null) {
 };
 
 const promptBtn = document.getElementById("prompt-btn");
-
 if (promptBtn !== null) {
   promptBtn.addEventListener("click", () => {
     getPrompt();
@@ -32,7 +30,11 @@ if (promptBtn !== null) {
 
 function getPrompt() {
   let promptResult = prompt("choose a number up to 100");
+
+   if (promptResult === null) return;
+  // @ts-ignore
   let parsedResult = parseInt(promptResult);
+
   if (parsedResult <= 100) {
     return parsedResult;
   } else {
