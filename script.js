@@ -54,6 +54,6 @@ function getPrompt() {
   if (parsedResult <= 100) {
     return parsedResult;
   } else {
-    return "The number you selected is invalid";
+    return alert("The number you selected is invalid!");
   }
 }
