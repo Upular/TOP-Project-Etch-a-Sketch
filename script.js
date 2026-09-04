@@ -1,37 +1,53 @@
 const container = document.getElementById("container");
 
-for (let i = 0; i < 256; i++) {
-  const newSquare = document.createElement("div");
+/**
+ * @param {number} squaresPerSide
+ */
+function createGrid(squaresPerSide) {
+  // @ts-ignore
+  container.innerHTML = "";
 
-  newSquare.classList.add("square");
+  // @ts-ignore
+  container.style.gridTemplateColumns = `repeat(${squaresPerSide}, 1fr)`;
+  // @ts-ignore
+  container.style.gridTemplateRows = `repeat(${squaresPerSide}, 1fr)`;
 
-  newSquare.addEventListener("mouseover", () => {
-    newSquare.classList.add("active");
-  });
+  const totalSquares = squaresPerSide * squaresPerSide;
 
-  if (container !== null) {
+  for (let i = 0; i < totalSquares; i++) {
+    const newSquare = document.createElement("div");
+    newSquare.classList.add("square");
+
+    newSquare.addEventListener("mouseover", () => {
+      newSquare.classList.add("active");
+    });
+
+    // @ts-ignore
     container.appendChild(newSquare);
   }
-};
+}
+
+createGrid(16);
 
 const resetBtn = document.getElementById("reset-btn");
 if (resetBtn !== null) {
   resetBtn.addEventListener("click", () => {
     location.reload();
   });
-};
+}
 
 const promptBtn = document.getElementById("prompt-btn");
 if (promptBtn !== null) {
   promptBtn.addEventListener("click", () => {
-    getPrompt();
+    let size = getPrompt();
+    if (typeof size === "number") createGrid(size);
   });
-};
+}
 
 function getPrompt() {
   let promptResult = prompt("choose a number up to 100");
 
-   if (promptResult === null) return;
+  if (promptResult === null) return;
   // @ts-ignore
   let parsedResult = parseInt(promptResult);
 
@@ -40,4 +56,4 @@ function getPrompt() {
   } else {
     return "The number you selected is invalid";
   }
-};
+}
